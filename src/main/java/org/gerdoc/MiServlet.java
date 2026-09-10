@@ -25,7 +25,17 @@ public class MiServlet extends HttpServlet
         out.println("<body>");
         out.println("<h1>Hola desde Servlet</h1>");
         out.println("<p>Tomcat 9 + IntelliJ + Maven</p>");
+        out.println("<p>Valor del parámetro 'correo': " + req.getParameter("exampleInputEmail1") + "</p>");
+        out.println("<p>Valor del parámetro 'exampleSelect': " + req.getParameter("exampleSelect") + "</p>");
+
+
         out.println("</body>");
         out.println("</html>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
+        doGet(req, resp);
     }
 }
