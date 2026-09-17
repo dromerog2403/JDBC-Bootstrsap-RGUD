@@ -25,7 +25,7 @@ public class MiServlet extends HttpServlet
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String url = "jdbc:mysql://127.0.0.1/TEST?user=root&password=1234";
-        String sql = "INSERT INTO ROL_Usuario(ROL_ROL,Usuario_USUARIO) VALUES(?,?)";
+        String sql = "INSERT INTO TBL_ROL(ROL,DESCRIPCION) VALUES(?,?)";
         int row = 0;
         resp.setContentType("text/html;charset=UTF-8");
 
@@ -33,8 +33,9 @@ public class MiServlet extends HttpServlet
         PrintWriter out = resp.getWriter();
         try
         {
-            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection( url );
+            System.out.println( connection.isClosed( ) );
             preparedStatement = connection.prepareStatement(sql);
             if( preparedStatement == null )
             {
@@ -43,22 +44,13 @@ public class MiServlet extends HttpServlet
             preparedStatement.setString(1, req.getParameter("exampleInputEmail1") );
             preparedStatement.setString(2, req.getParameter("exampleSelect") );
             row = preparedStatement.executeUpdate( );
-
-            System.out.println( connection.isClosed( ) );
+            connection.close( );
         }
         catch (SQLException e)
         {
             throw new RuntimeException(e);
         }
         catch (ClassNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
-        catch (InstantiationException e)
-        {
-            throw new RuntimeException(e);
-        }
-        catch (IllegalAccessException e)
         {
             throw new RuntimeException(e);
         }
