@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,42 +9,16 @@
 </head>
 <body>
 <div class="container">
-    <h1>Proyecto funcionando</h1>
-    <table class="table">
-    <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Gerdoc</td>
-            <td>Gutiérrez</td>
-        </tr>
-    </tbody>
-    </table>
-    <a href="MiServlet">Ejecutar Servlet</a>
-º</div>
-<div class="container">
     <h1>Formularios</h1>
-    <form action="MiServlet" method="get">
+    <form action="MiServlet" method="post">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="exampleInputName1" class="form-label">Ingresa tu nombre</label>
+            <input type="name" class="form-control" id="exampleInputName1" name="exampleInputName1" aria-describedby="nameHelp">
+            <div id="text" class="form-text">'Well never share your information with anyone else.'</div>
         </div>
         <div class="mb-3">
-            <label for="exampleSelect" class="form-label">Números</label>
-            <select id="exampleSelect" name="exampleSelect" class="form-select" aria-label="Default select example" aria-describedby="selectHelp">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-            <div id="selectHelp" class="form-text">Test.</div>
+            <label for="exampleInputAge1" class="form-label">Ingresa tu edad</label>
+            <input type="number" class="form-control" id="exampleInputAge1" name="exampleInputAge1" aria-describedby="ageHelp">
         </div>
         <button type="submit" class="btn btn-primary">
             Enviar información
